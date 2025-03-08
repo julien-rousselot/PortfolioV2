@@ -1,7 +1,7 @@
-# Leo - Astro Theme With Tailwindcss & MDX
+# Astro Theme With Tailwindcss & MDX (FROM LEO)
 
 
-Leo is an Astro theme built with [Tailwind](https://tailwindcss.com/), [React.js](https://react.dev/) and [Three.js](https://threejs.org/) that gives you a sense of exploration in the universe and is designed to make writing posts easy. Besides the features offered by other blog themes, the Leo theme comes with an i18n setting for multi-language writers.
+Astro theme built with [Tailwind](https://tailwindcss.com/), [React.js](https://react.dev/) and [Three.js](https://threejs.org/) that gives you a sense of exploration in the universe and is designed to make writing posts easy. Besides the features offered by other blog themes, the Leo theme comes with an i18n setting for multi-language writers. 
 
 For the starry sky background animation on the page, I implemented the continuous movement effect using Three.js. Initially, you will see the constantly moving animation. However, to prevent this animation from affecting the user's reading experience, the movement speed slows down almost to a stop whenever there is any mouse interaction. It will only return to the fast movement once the user stops interacting for a while.
 
