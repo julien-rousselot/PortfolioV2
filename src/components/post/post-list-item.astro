@@ -28,16 +28,17 @@ const [lang, ...slug] = post.slug.split("/");
       </a>
     )
   }
-  <div class="flex flex-col gap-2">
-    <div class="flex gap-2">
-      <DateTag date={post.data.date} />
-      {post.data.tags?.map((tag: string) => <Tag tag={tag} />)}
-    </div>
-    <a href={`/${lang}/posts/${slug.join("/")}`} target="_self">
-      <h1 class="text-3xl font-title font-black text-white">{post.data.title}</h1>
-    </a>
-    <a href={`/${lang}/posts/${slug.join("/")}`} target="_self">
-      <p class="text-sm text-gray-300">{post.data.description}</p>
-    </a>
+<div class="flex flex-col gap-2">
+  <div class="flex flex-wrap gap-2">
+    <DateTag date={post.data.date} />
+    {post.data.tags?.map((tag: string) => <Tag tag={tag} />)}
   </div>
+  <a href={`/${lang}/posts/${slug.join("/")}`} target="_self">
+    <h1 class="text-3xl font-title font-black text-white">{post.data.title}</h1>
+  </a>
+  <a href={`/${lang}/posts/${slug.join("/")}`} target="_self">
+    <p class="text-sm text-gray-300">{post.data.description}</p>
+  </a>
+</div>
+
 </div>

@@ -2,43 +2,44 @@
 
 export const SITE_FAVICON = "/favicon.png";
 export const SITE_LOGO = "/leo.png";
-export const SITE_TITLE = "LEO";
+export const SITE_TITLE = "Julien Rousselot";
 export const SITE_URL = "https://astro-theme-leo.muji.dev";
 export const SITE_DESCRIPTION =
   `
   This is a space where creativity meets logic. As a passionate frontend engineer and dreamer inspired by the vastness of space, Leo shares insights on cutting-edge web development, personal projects, and the exploration of new technologies. With a unique blend of technical expertise and a love for innovation, this blog is a journey into problem-solving, design, and the limitless possibilities of the digital universe.
 `;
 export const ME_AVATAR = "/leo.png";
-export const LANGUAGES = ['en', 'zh'];
+export const LANGUAGES = ['en', 'fr'];
 
 export const MENUS = [
   {
-    title: "About Me",
+    title: "À propos",
     link: "/me",
     target: "_self",
-  },
+  }, 
   {
-    title: "Posts",
-    link: "/en/posts",
+    title: "Projets",
+    link: "/",
     target: "_self",
   },
   {
     title: "Github",
-    link: "YOUR_GITHUB_URL",
+    link: "https://github.com/julien-rousselot",
     target: "_blank",
     icon: "github",
   },
+
 ];
 
-export const FOOTER_CONTENT = "Mr.Leo. All rights reserved.";
+export const FOOTER_CONTENT = "All rights reserved.";
 
 export const CONTACTS = {
-  linkedIn: "YOUR_LINKEDIN_URL",
-  github: "YOUR_GITHUB_URL",
-  email: "mailto:YOUR_EMAIL",
+  linkedIn: "https://www.linkedin.com/in/julien-rousselot/",
+  github: "https://github.com/julien-rousselot",
+  email: "mailto:julienrousselot.dev@gmail.com",
 };
 
-export const SLOGAN = "To infinity and beyond!";
+export const SLOGAN = "Développeur web fullstack";
 export const ME_DESCRIPTION =
   `Hi, I’m Leo! Since childhood, I’ve dreamed of becoming an astronaut, which shaped my passion for exploration and curiosity about the unknown. I’m a creative thinker with strong logical reasoning skills, allowing me to approach challenges innovatively yet systematically. I thrive on discovering new ideas and pushing boundaries, whether in my work or personal growth. My motto, “Explore endlessly, surpass yourself,” reflects my dedication to learning and achieving. Combining creativity with analytical thinking, I’m eager to contribute to meaningful projects and explore new opportunities!`;
 

@@ -39,13 +39,13 @@ const coverSrc = isCoverObject ? `${cover.src}` : `${cover}`;
   </Fragment>
 
   <div class="flex flex-col gap-8 md:w-5/6 px-4 py-12 sm:px-8 mx-auto">
-    <div class="flex flex-col gap-6 items-center justify-center max-w-screen-sm mx-auto">
-      <h1 id="header" class="text-5xl text-center font-title font-black text-white">{post.data.title}</h1>
-      <div class="flex items-center justify-center gap-2">
+    <div class="flex flex-col gap-6 text-center items-center md:justify-center md:max-w-screen-sm md:mx-auto">
+      <h1 id="header" class="text-5xl font-title font-black text-white">{post.data.title}</h1>
+      <div class="flex flex-wrap items-center justify-center gap-2">
         <DateTag date={post.data.date} />
         {post.data.tags?.map((tag) => <Tag tag={tag} />)}
       </div>
-      <p class="text-lg text-center text-white max-w-[576px]">{post.data.description}</p>
+      <p class="text-lg text-center text-white">{post.data.description}</p>
     </div>
     {coverSrc && <img src={coverSrc} alt={post.data.title} class="w-full max-w-screen-md mx-auto rounded-lg" />}
   </div>
