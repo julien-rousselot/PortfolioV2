@@ -20,6 +20,14 @@ const { title, description, hideFooter } = Astro.props;
 <html lang={Astro.currentLocale} class="bg-slate-900">
   <head>
     <Meta title={title ? `${title} · ${SITE_TITLE}` : SITE_TITLE} description={description ?? SITE_DESCRIPTION} />
+    <link rel="icon" href="/devo.png" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Honk&display=swap" rel="stylesheet">
+    
+    <!-- <style>
+      @import url('https://fonts.googleapis.com/css2?family=Honk&display=swap');
+    </style> -->
     <slot name="meta" />
   </head>
   <body class="relative bg-neutral-900">

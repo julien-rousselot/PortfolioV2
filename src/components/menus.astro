@@ -9,17 +9,26 @@ import { Icon } from "astro-icon/components";
       <a
         href={item.link}
         target={item.target}
-        class="h-full mx-0 md:mx-4 text-sm text-slate-400 hover:text-slate-100 flex items-center gap-2"
+        class="h-full mx-0 md:mx-4 text-2xl text-slate-400 hover:text-slate-100 flex items-center gap-2"
       >
         {item.icon && (
-          <span>
+          <span class="honk-custom">
             <Icon name={item.icon} width={16} height={16} class="text-slate-400" />
           </span>
         )}
         {/* // hide title in mobile if icon exists */}
-        <span class={item.icon ? "hidden md:block" : ""}>{item.title}</span>
+        <span class={item.icon ? "hidden md:block honk-custom" : "honk-custom"}>{item.title}</span>
       </a>
     ))
   }
   <slot />
 </div>
+
+<!-- Style pour appliquer la police Honk -->
+<style>
+  .honk-custom {
+    font-family: "Honk", system-ui, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+</style>

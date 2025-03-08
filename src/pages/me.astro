@@ -14,7 +14,11 @@ import { Icon } from "astro-icon/components";
     <div class="bg-neutral-900/60 rounded-lg p-4 mt-[60px] md:mt-[80px] mb-6">
       <div class="flex-col md:flex-row flex items-center justify-center gap-6 md:gap-10 h-full text-white">
         <div>
-          <h3 class="text-white text-2xl font-logo">Salut ! Moi c'est Julien</h3>
+          <!-- <div class="flex flex-row items-center gap-4"> -->
+            <img class="w-48 rounded-full m-6" src="../../public/moi.png" alt="">
+
+            <h3 class="text-white text-2xl font-logo">Salut ! Moi c'est Julien</h3>
+          <!-- </div> -->
           <p class="font-mono text-slate-400 my-6 mb-10" set:html={ME_DESCRIPTION} />
           <h3 class="text-white text-2xl font-logo mb-5">Contacts</h3>
           <ContactRow />

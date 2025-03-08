@@ -1,6 +1,6 @@
 
 
-export const SITE_FAVICON = "/favicon.png";
+export const SITE_FAVICON = "/devo.png";
 export const SITE_LOGO = "/leo.png";
 export const SITE_TITLE = "Julien Rousselot";
 export const SITE_URL = "https://astro-theme-leo.muji.dev";
@@ -13,13 +13,13 @@ export const LANGUAGES = ['en', 'fr'];
 
 export const MENUS = [
   {
-    title: "À propos",
-    link: "/me",
+    title: "Projets",
+    link: "/",
     target: "_self",
   }, 
   {
-    title: "Projets",
-    link: "/",
+    title: "Profil",
+    link: "/me",
     target: "_self",
   },
   {

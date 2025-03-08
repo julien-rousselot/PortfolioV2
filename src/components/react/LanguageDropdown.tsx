@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { LANGUAGES } from "../../config";
+import './dropdown.css'; // Import du fichier CSS
 
 const Dropdown = () => {
   const [currentLanguage, setCurrentLanguage] = useState("fr"); // Défaut en français
@@ -57,7 +58,7 @@ const Dropdown = () => {
     <div className="relative inline-block" ref={dropdownRef}>
       {/* Dropdown button */}
       <button
-        className="inline-flex justify-start items-center bg-transparent px-4 py-2 text-sm font-medium text-slate-400 focus:outline-none"
+        className="honk-custom inline-flex justify-start items-center bg-transparent px-4 py-2 text-xl font-medium text-slate-400 focus:outline-none"
         onClick={toggleDropdown}
       >
         {currentLanguage}
@@ -76,7 +77,7 @@ const Dropdown = () => {
           {LANGUAGES.map((lang) => (
             <div className="py-1" key={lang}>
               <button
-                className="text-slate-400 inline-block px-4 py-2 text-sm hover:bg-slate-800 w-full"
+                className="honk-custom text-slate-400 inline-block px-4 py-2 text-xl hover:bg-slate-800 w-full"
                 onClick={() => handleLanguageChange(lang)}
               >
                 {lang}
