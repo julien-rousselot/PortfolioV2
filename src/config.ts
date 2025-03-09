@@ -41,9 +41,10 @@ export const CONTACTS = {
 
 export const SLOGAN = "Développeur web fullstack";
 export const ME_DESCRIPTION =
-  `Hi, I’m Leo! Since childhood, I’ve dreamed of becoming an astronaut, which shaped my passion for exploration and curiosity about the unknown. I’m a creative thinker with strong logical reasoning skills, allowing me to approach challenges innovatively yet systematically. I thrive on discovering new ideas and pushing boundaries, whether in my work or personal growth. My motto, “Explore endlessly, surpass yourself,” reflects my dedication to learning and achieving. Combining creativity with analytical thinking, I’m eager to contribute to meaningful projects and explore new opportunities!`;
+  `Depuis tout petit, l'espace m'a toujours fasciné. Les étoiles, les planètes, l'infini de l'univers ont éveillé en moi une curiosité sans fin. Cette passion m'a appris à regarder au-delà de ce que l'on voit, à chercher des solutions là où il semble n'y en avoir aucune, et à comprendre que chaque détail, aussi minuscule soit-il, peut avoir un impact immense. Avec le temps, cette quête de compréhension m'a naturellement conduit vers le développement web, un domaine où la curiosité et la recherche de solutions innovantes sont essentielles. Aujourd'hui, je mets cette passion pour l'exploration et la découverte au service du code, en cherchant à construire des expériences web qui repoussent les limites de l'imaginaire, tout comme l'exploration spatiale.`;
 
-
+// export const SKILLS = [
+// ];
 export const WORK_EXPERIENCE = [
   {
     company: "Galactic Ventures",

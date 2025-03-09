@@ -4,9 +4,9 @@ import "@fontsource-variable/jetbrains-mono";
 import { ME_DESCRIPTION } from "../config";
 import ContactRow from "../components/contact-row.astro";
 import { WORK_EXPERIENCE } from "../config";
-import { Image } from "astro:assets";
-import { PROJECTS,ME_AVATAR } from "../config";
+import { PROJECTS, ME_AVATAR } from "../config";
 import { Icon } from "astro-icon/components";
+import Skills from "./Skills.tsx";
 ---
 
 <Layout hideFooter title="About Me">
@@ -14,12 +14,21 @@ import { Icon } from "astro-icon/components";
     <div class="bg-neutral-900/60 rounded-lg p-4 mt-[60px] md:mt-[80px] mb-6">
       <div class="flex-col md:flex-row flex items-center justify-center gap-6 md:gap-10 h-full text-white">
         <div>
-          <!-- <div class="flex flex-row items-center gap-4"> -->
-            <img class="w-48 rounded-full m-6" src="../../public/moi.png" alt="">
+          <!-- Conteneur de l'image pour gérer l'effet -->
+          <div class="flex justify-center">
+            <div class="relative w-48 h-48">
+              <img 
+                class="w-full h-full rounded-full transition-transform duration-300 ease-out"
+                src="../../public/moi.png" 
+                alt="" 
+                id="animated-image"
+              />
+            </div>
+          </div>
 
-            <h3 class="text-white text-2xl font-logo">Salut ! Moi c'est Julien</h3>
-          <!-- </div> -->
+          <h3 class="text-white text-2xl font-logo">Salut ! Moi c'est Julien</h3>
           <p class="font-mono text-slate-400 my-6 mb-10" set:html={ME_DESCRIPTION} />
+          <Skills />
           <h3 class="text-white text-2xl font-logo mb-5">Contacts</h3>
           <ContactRow />
         </div>
@@ -30,19 +39,15 @@ import { Icon } from "astro-icon/components";
               <h3 class="text-lg text-white font-logo">Work Experience</h3>
             </div>
             <ul class="flex flex-col gap-4 text-slate-400 m-0">
-              {
-                WORK_EXPERIENCE.map((item) => (
-                  <li class="flex flex-col">
-                    <h4 class="text-lg">{item.company}</h4>
-                    <div class="flex gap-2 justify-between text-slate-500">
-                      <p class="text-sm">{item.position}</p>
-                      <p class="text-sm">
-                        {item.startDate} - {item.endDate}
-                      </p>
-                    </div>
-                  </li>
-                ))
-              }
+              {WORK_EXPERIENCE.map((item) => (
+                <li class="flex flex-col">
+                  <h4 class="text-lg">{item.company}</h4>
+                  <div class="flex gap-2 justify-between text-slate-500">
+                    <p class="text-sm">{item.position}</p>
+                    <p class="text-sm">{item.startDate} - {item.endDate}</p>
+                  </div>
+                </li>
+              ))}
             </ul>
             <a
               class="px-4 py-2 border border-slate-400"
@@ -58,55 +63,26 @@ import { Icon } from "astro-icon/components";
         </div>
       </div>
     </div>
-
-    <!-- <div class="p-4 flex gap-4 bg-neutral-900/60 rounded-lg">
-      <div class="flex flex-col flex-1">
-        <h3 class="text-white text-2xl font-logo mb-6">Projects</h3>
-        <ul class="flex flex-col gap-8 text-slate-400 m-0">
-          {
-            PROJECTS.map((item) => (
-              <li
-                class="project flex gap-4 md:flex-row flex-col cursor-pointer rounded-lg p-4 hover:bg-white/10  transition-colors"
-                id={item.id}
-              >
-                <div class="max-w-full md:max-w-40 w-full aspect-[4/3] overflow-hidden rounded-lg bg-white ">
-                  <Image width="160" height="120" src={item.image} alt={item.title} class="object-cover h-full w-full" />
-                </div>
-                <div>
-                  {item.externalLink ? (
-                    <a
-                      href={item.externalLink}
-                      target="_blank"
-                      class="hover:text-white text-slate-200 text-lg flex items-center gap-1 transition-colors"
-                    >
-                      <h4 class="text-lg">{item.title}</h4>
-
-                      <Icon name="mdi:external-link" class="w-3 h-3" />
-                    </a>
-                  ) : (
-                    <h4 class="text-lg text-slate-200">{item.title}</h4>
-                  )}
-                  <p class="text-sm mb-4">{item.description}</p>
-                  <ul class="list-disc list-inside flex-col gap-1">
-                    {item.details.map((detail) => (
-                      <li class="text-sm">{detail}</li>
-                    ))}
-                  </ul>
-                </div>
-              </li>
-            ))
-          }
-        </ul>
-      </div> -->
-    </div>
   </div>
-</Layout>
+<!-- </Layout> -->
+
 
 <script>
-  const projects = document.querySelectorAll(".project");
-  projects.forEach((project) => {
-    project.addEventListener("click", () => {
-      window.location.href = `/projects/${project.id}`;
+  document.addEventListener("DOMContentLoaded", () => {
+    const image = document.getElementById("animated-image");
+
+    document.addEventListener("mousemove", (event) => {
+      const { clientX, clientY } = event;
+      const { innerWidth, innerHeight } = window;
+
+      const moveX = ((clientX / innerWidth) - 0.5) * 20;
+      const moveY = ((clientY / innerHeight) - 0.5) * 20;
+
+      image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+    });
+
+    document.addEventListener("mouseleave", () => {
+      image.style.transform = "none"; // Réinitialise l'animation
     });
   });
 </script>
