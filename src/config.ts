@@ -1,14 +1,12 @@
 
 
 export const SITE_FAVICON = "/devo.png";
-export const SITE_LOGO = "/leo.png";
 export const SITE_TITLE = "Julien Rousselot";
 export const SITE_URL = "https://astro-theme-leo.muji.dev";
 export const SITE_DESCRIPTION =
   `
   This is a space where creativity meets logic. As a passionate frontend engineer and dreamer inspired by the vastness of space, Leo shares insights on cutting-edge web development, personal projects, and the exploration of new technologies. With a unique blend of technical expertise and a love for innovation, this blog is a journey into problem-solving, design, and the limitless possibilities of the digital universe.
 `;
-export const ME_AVATAR = "/leo.png";
 export const LANGUAGES = ['en', 'fr'];
 
 export const MENUS = [
@@ -16,17 +14,20 @@ export const MENUS = [
     title: "Projets",
     link: "/",
     target: "_self",
+    alt: "Boutton de navigation vers les projets",
   }, 
   {
     title: "Profil",
     link: "/me",
     target: "_self",
+    alt: "boutton de navigation vers le profil",
   },
   {
     title: "Github",
     link: "https://github.com/julien-rousselot",
     target: "_blank",
     icon: "github",
+    alt: "boutton de navigation vers le github",
   },
 
 ];
@@ -47,31 +48,31 @@ export const ME_DESCRIPTION =
 // ];
 export const WORK_EXPERIENCE = [
   {
-    company: "Galactic Ventures",
-    position: "Innovation Explorer",
-    startDate: "2022",
-    endDate: "2024",
+    company: "MakaraMedia",
+    position: "Développeur web fullstack",
+    startDate: "2024",
+    endDate: "2025",
   },
   
   {
-    company: "Interstellar Academy Program",
-    position: "Astro Trainee",
-    startDate: "2023",
+    company: "Un Instant Pour Soi",
+    position: "Développeur frontend (Freelance)",
+    startDate: "2024",
+    endDate: "2025",
+  },
+  
+  {
+    company: "Julien Rousselot Digital",
+    position: "Développeur web fullstack",
+    startDate: "2025",
+    endDate: "2025",
+  },
+  
+  {
+    company: "Accenture",
+    position: "Modérateur de contenu web",
+    startDate: "2021",
     endDate: "2023",
-  },
-  
-  {
-    company: "LunarTech Solutions",
-    position: "Creative Logic Engineer",
-    startDate: "2020",
-    endDate: "2022",
-  },
-  
-  {
-    company: "Cosmic Coders Inc.",
-    position: "Frontend Navigator",
-    startDate: "2018",
-    endDate: "2020",
   },
   
 ];

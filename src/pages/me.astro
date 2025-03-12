@@ -4,7 +4,7 @@ import "@fontsource-variable/jetbrains-mono";
 import { ME_DESCRIPTION } from "../config";
 import ContactRow from "../components/contact-row.astro";
 import { WORK_EXPERIENCE } from "../config";
-import { PROJECTS, ME_AVATAR } from "../config";
+import { PROJECTS } from "../config";
 import { Icon } from "astro-icon/components";
 import Skills from "./Skills.tsx";
 ---
@@ -12,54 +12,68 @@ import Skills from "./Skills.tsx";
 <Layout hideFooter title="About Me">
   <div class="max-w-screen-lg mx-auto pb-24">
     <div class="bg-neutral-900/60 rounded-lg p-4 mt-[60px] md:mt-[80px] mb-6">
-      <div class="flex-col md:flex-row flex items-center justify-center gap-6 md:gap-10 h-full text-white">
+      <div class="flex-col md:flex-row flex  justify-center gap-6 md:gap-10 h-full text-white">
         <div>
-          <!-- Conteneur de l'image pour gérer l'effet -->
+          <section>
           <div class="flex justify-center">
-            <div class="relative w-48 h-48">
+            <div class="relative w-52 h-52">
               <img 
                 class="w-full h-full rounded-full transition-transform duration-300 ease-out"
                 src="../../public/moi.png" 
-                alt="" 
+                alt="photo du proprietaire du site" 
                 id="animated-image"
               />
             </div>
           </div>
 
-          <h3 class="text-white text-2xl font-logo">Salut ! Moi c'est Julien</h3>
-          <p class="font-mono text-slate-400 my-6 mb-10" set:html={ME_DESCRIPTION} />
+          <h3 class="text-white text-3xl font-logo text-center m-6">Salut ! Moi c'est Julien</h3>
+          <p class="font-mono text-slate-400 my-6 mb-10 text-justify" style="word-spacing: 0.5px;" set:html={ME_DESCRIPTION} />
+          </section>
           <Skills />
-          <h3 class="text-white text-2xl font-logo mb-5">Contacts</h3>
-          <ContactRow />
-        </div>
-        <div class="min-w-80 w-full">
-          <div class="flex flex-col border border-slate-600 gap-4 p-4 pt-0">
-            <img src={ME_AVATAR} alt="me" class="w-32 h-32 rounded-full mx-auto mt-4" />
-            <div class="flex flex-wrap items-center">
-              <h3 class="text-lg text-white font-logo">Work Experience</h3>
-            </div>
-            <ul class="flex flex-col gap-4 text-slate-400 m-0">
-              {WORK_EXPERIENCE.map((item) => (
-                <li class="flex flex-col">
-                  <h4 class="text-lg">{item.company}</h4>
-                  <div class="flex gap-2 justify-between text-slate-500">
-                    <p class="text-sm">{item.position}</p>
-                    <p class="text-sm">{item.startDate} - {item.endDate}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <a
-              class="px-4 py-2 border border-slate-400"
-              target="_blank"
-              href="YOUR_RESUME_URL"
-              download="Resume.pdf"
-            >
-              <div class="flex gap-2 items-center text-white justify-center">
-                <span>Open CV</span>
+
+          <div class="min-w-80 w-full md:px-16">
+            <div class="flex flex-col border border-slate-600 gap-4 p-4 mt-6 pt-0">
+              <div class="flex flex-wrap items-center">
+                <h3 class="text-lg pt-6 text-white font-logo">Experience</h3>
               </div>
-            </a>
-          </div>
+              <ul class="flex flex-col gap-4 text-slate-400 m-0">
+                {WORK_EXPERIENCE.map((item) => (
+                  <li class="flex flex-col">
+                    <h4 class="text-lg">{item.company}</h4>
+                    <div class="flex justify-between text-slate-500">
+                      <p class="text-sm">{item.position}</p>
+                      <p class="text-sm">{item.startDate} - {item.endDate}</p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+    
+              <a
+                class="px-4 py-2 border border-slate-400 hover:bg-[#FFBA55] rounded-lg"
+                target="_blank"
+                href="/public/JulienRousselotCV.pdf"
+              >
+                <div class="flex flex-row gap-2 items-center text-white justify-center">
+                  <span>Mon CV </span>
+                  <img class="w-6" src="../../public/cv.png" alt="mon cv">
+                </div>
+              </a>
+            </div>
+        </div>
+
+        <section class="flex flex-col justify-center text-slate-400">
+          <p class="font-mono flex flex-col py-6">
+            <span class="font-semibold text-xl text-balance py-6">Le développement web, c’est aussi faire face à des bugs et des imprévus. Dans cette vidéo, je partage plusieurs solutions à des problèmes que j’ai rencontrés, avec des explications simples et efficaces. </span>
+            <span>🌔 Correction de [nom du problème 1]</span>
+            <span>🌔 Optimisation de [nom du problème 2]</span>
+            <span>🌔 Astuce pour [nom du problème 3]</span></p>
+          <video onloadstart="this.volume=0.5" controls src="../../public/pew.mp4">Tuto Youtube</video>
+        </section>
+
+          <footer class="flex flex-col justify-center items-center  border-slate-600 p-4 mt-4">
+            <h3 class="text-white text-3xl flex font-logo orbitron">Contacts</h3>
+            <ContactRow />
+          </footer>
         </div>
       </div>
     </div>
@@ -84,5 +98,12 @@ import Skills from "./Skills.tsx";
     document.addEventListener("mouseleave", () => {
       image.style.transform = "none"; // Réinitialise l'animation
     });
+  });
+</script>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+      const video = document.getElementById("myVideo");
+      video.volume = 0.5; // Définit le volume à 50% (0 = muet, 1 = max)
   });
 </script>

@@ -78,25 +78,39 @@ const StarBackground: React.FC = () => {
 
     // animation logic
     let currentSpeed = 0.01;
-    let idleTimer: ReturnType<typeof setTimeout>;
+    let idleTimer: ReturnType<typeof Number>;
 
     // mouse move trigger deceleration
-    const handleMouseMove = throttle(() => {
-      console.log("mouse moved");
+// mouse move trigger deceleration
+const handleMouseMove = throttle(() => {
+  console.log("mouse moved");
 
-      // deceleration
-      if (speedRef.current !== 0.0005) {
-        speedRef.current = 0.0005;
+  // deceleration
+  if (speedRef.current !== 0.0005) {
+    speedRef.current = 0.0005;
+  }
+
+  // stop moving restore speed
+  clearTimeout(idleTimer);
+  
+  let startTime: number | null = null;
+
+  const restoreSpeed = (timestamp: number) => {
+    if (!startTime) startTime = timestamp;
+    const elapsed = timestamp - startTime;
+
+    if (elapsed >= 30000) { // 30 secondes
+      if (speedRef.current !== 0.05) {
+        speedRef.current = 0.05;
       }
+    } else {
+      idleTimer = requestAnimationFrame(restoreSpeed);
+    }
+  };
 
-      // stop moving restore speed
-      clearTimeout(idleTimer);
-      idleTimer = setTimeout(() => {
-        if (speedRef.current !== 0.05) {
-          speedRef.current = 0.05;
-        }
-      }, 30000); // 30 seconds without movement
-    }, 100); // trigger every 100ms
+  idleTimer = requestAnimationFrame(restoreSpeed);
+}, 100); // trigger every 100ms
+
 
     window.addEventListener("mousemove", handleMouseMove);
     const layoutContainer = document.getElementById("layout-container");
@@ -132,7 +146,7 @@ const StarBackground: React.FC = () => {
     return () => {
       window.removeEventListener("resize", handleResize);
       window.removeEventListener("mousemove", handleMouseMove);
-      clearTimeout(idleTimer);
+      cancelAnimationFrame(idleTimer);
       particlesGeometry.dispose();
       particlesMaterial.dispose();
       renderer.dispose();

@@ -59,7 +59,7 @@ const Dropdown = () => {
     <div className="relative inline-block" ref={dropdownRef}>
       {/* Dropdown button */}
       <button
-        className="honk-custom inline-flex justify-start items-center bg-transparent px-4 py-2 text-xl font-medium text-slate-400 focus:outline-none"
+        className="orbitron inline-flex justify-start items-center bg-transparent px-4 py-2 text-sm font-medium text-slate-400 focus:outline-none"
         onClick={toggleDropdown}
       >
         {currentLanguage}
@@ -78,7 +78,7 @@ const Dropdown = () => {
           {LANGUAGES.map((lang) => (
             <div className="py-1" key={lang}>
               <button
-                className="honk-custom text-slate-400 inline-block px-4 py-2 text-xl hover:bg-slate-800 w-full"
+                className="orbitron text-slate-400 inline-block px-4 py-2 text-sm hover:bg-slate-800 w-full"
                 onClick={() => handleLanguageChange(lang)}
               >
                 {lang}

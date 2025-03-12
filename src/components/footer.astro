@@ -9,6 +9,11 @@ import { FOOTER_CONTENT } from "../config";
 </footer>
 
 <script>
-  const currentYear = new Date().getFullYear();
-  document.getElementById("current-year")!.textContent = currentYear.toString();
+  window.onload = () => {
+    const currentYear = new Date().getFullYear();
+    const yearSpan = document.getElementById("current-year");
+    if (yearSpan) {
+      yearSpan.textContent = currentYear.toString();
+    }
+  };
 </script>

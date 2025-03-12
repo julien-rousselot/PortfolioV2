@@ -10,14 +10,15 @@ import { Icon } from "astro-icon/components";
         href={item.link}
         target={item.target}
         class="h-full mx-0 md:mx-4 text-2xl text-slate-400 hover:text-slate-100 flex items-center gap-2"
+        aria-label={item.title}
       >
         {item.icon && (
-          <span class="honk-custom">
+          <span class="orbitron">
             <Icon name={item.icon} width={16} height={16} class="text-slate-400" />
           </span>
         )}
         {/* // hide title in mobile if icon exists */}
-        <span class={item.icon ? "hidden md:block honk-custom" : "honk-custom"}>{item.title}</span>
+        <span class={item.icon ? "hidden md:block orbitron text-sm" : "orbitron text-sm"}>{item.title}</span>
       </a>
     ))
   }
@@ -31,4 +32,19 @@ import { Icon } from "astro-icon/components";
     font-weight: 400;
     font-style: normal;
   }
+  .sixtyfour {
+  font-family: "Sixtyfour", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "BLED" 0,
+    "SCAN" 0;
+}
+.orbitron {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+}
 </style>
