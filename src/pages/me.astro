@@ -4,8 +4,6 @@ import "@fontsource-variable/jetbrains-mono";
 import { ME_DESCRIPTION } from "../config";
 import ContactRow from "../components/contact-row.astro";
 import { WORK_EXPERIENCE } from "../config";
-import { PROJECTS } from "../config";
-import { Icon } from "astro-icon/components";
 import Skills from "./Skills.tsx";
 ---
 
@@ -98,12 +96,5 @@ import Skills from "./Skills.tsx";
     document.addEventListener("mouseleave", () => {
       image.style.transform = "none"; // Réinitialise l'animation
     });
-  });
-</script>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function() {
-      const video = document.getElementById("myVideo");
-      video.volume = 0.5; // Définit le volume à 50% (0 = muet, 1 = max)
   });
 </script>
