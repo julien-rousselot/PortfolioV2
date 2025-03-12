@@ -65,7 +65,7 @@ import Skills from "./Skills.tsx";
             <span>🌔 Correction de [nom du problème 1]</span>
             <span>🌔 Optimisation de [nom du problème 2]</span>
             <span>🌔 Astuce pour [nom du problème 3]</span></p>
-          <video onloadstart="this.volume=0.5" controls src="../../public/pew.mp4">Tuto Youtube</video>
+          <video onloadstart="volume=0.1" controls src="../../public/pew.mp4">Tuto Youtube</video>
         </section>
 
           <footer class="flex flex-col justify-center items-center  border-slate-600 p-4 mt-4">
@@ -90,11 +90,15 @@ import Skills from "./Skills.tsx";
       const moveX = ((clientX / innerWidth) - 0.5) * 20;
       const moveY = ((clientY / innerHeight) - 0.5) * 20;
 
-      image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      if (image) {
+        image.style.transform = `translate(${moveX}px, ${moveY}px)`;
+      }
     });
 
     document.addEventListener("mouseleave", () => {
-      image.style.transform = "none"; // Réinitialise l'animation
+      if (image) {
+        image.style.transform = "none"; // Réinitialise l'animation
+      }
     });
   });
 </script>
